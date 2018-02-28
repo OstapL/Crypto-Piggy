@@ -2,26 +2,19 @@
   <v-container text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <div class="top-logo sign-in">
+        <div class="top-logo home-page">
           <div class="top-logo-wrap">
             <div class="path"></div>
-            <img src="../../assets/icons/icon.svg" alt="logo" class="logo">
-            <h1 class="big">Let’s check how much do you have today! </h1>
+            <img src="../assets/icons/icon.svg" alt="logo" class="logo">
           </div>
         </div>
-
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap>
-      <v-flex xs12>
-        <h2>Log in</h2>
       </v-flex>
     </v-layout>
     <v-form ref="form">
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
-            placeholder="Password"
+            placeholder="Type wallet address"
             name="input-2-3"
             single-line
             full-width
@@ -31,12 +24,7 @@
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn depressed>Log in to account</v-btn>
-        </v-flex>
-      </v-layout>
-      <v-layout row wrap>
-        <v-flex xs12>
-          <a href="#">Need a registration</a>
+          <v-btn depressed>Search</v-btn>
         </v-flex>
       </v-layout>
     </v-form>
@@ -50,13 +38,14 @@ export default {
 </script>
 
 <style scoped lang="sass">
-  .sign-in
-    padding-bottom: 0
-    .top-logo-wrap
-      position: relative
   h2
     margin-bottom: 20px
   .btn
     margin-top: 10px
     margin-bottom: 20px
+  .home-page
+    .top-logo-wrap
+      img
+        width: 100px
+
 </style>
