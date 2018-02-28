@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title></title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal" font-family="FontAwesome" font-size="40" opacity="0.25">
+        <g id="Home-page/CurrencyPicker" transform="translate(-172.000000, -135.000000)" fill="#C5DBDD">
+            <g id="Search" transform="translate(109.000000, 133.000000)">
+                <text id="">
+                    <tspan x="63" y="34"></tspan>
+                    <tspan x="100.142857" y="34" font-family="Questrial-Regular, Questrial"> </tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

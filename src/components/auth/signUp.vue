@@ -3,6 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12>
         <div class="top-logo">
+          <div class="path"></div>
           <img src="../../assets/icons/icon.svg" alt="logo" class="logo">
           <h1 class="big">Let’s check how much do you have today! </h1>
         </div>
@@ -63,14 +64,4 @@ export default {
   .btn
     margin-top: 10px
     margin-bottom: 20px
-  .top-logo
-    position: relative
-    .logo
-      margin-top: 20px
-    h1.big
-      color: #fff
-      opacity: 0.5
-      margin-bottom: 60px
-      max-width: 270px
-      margin: 0px auto 60px auto
 </style>
