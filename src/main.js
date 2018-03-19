@@ -5,10 +5,13 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
 import VueCordova from 'vue-cordova'
 import VueHead from 'vue-head'
-
+import { sync } from 'vuex-router-sync'
+import { store } from './store'
 import App from './App'
 import router from './router'
+import VueResource from 'vue-resource'
 
+Vue.use(VueResource)
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 Vue.use(VueCordova)
@@ -21,11 +24,12 @@ if (window.location.protocol === 'file:' || window.location.port === '3000') {
   cordovaScript.setAttribute('src', 'cordova.js')
   document.body.appendChild(cordovaScript)
 }
-
+sync(store, router)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
   head: {

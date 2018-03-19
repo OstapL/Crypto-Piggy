@@ -17,7 +17,20 @@
         <h2>Log in</h2>
       </v-flex>
     </v-layout>
-    <v-form ref="form">
+    <v-form ref="form" @submit.prevent="onSignin">
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-text-field
+            placeholder="email"
+            name="input-2-3"
+            single-line
+            full-width
+            hide-details
+            v-model="email"
+            type="email"
+        ></v-text-field>
+        </v-flex>
+      </v-layout>
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
@@ -26,12 +39,14 @@
             single-line
             full-width
             hide-details
+            v-model="password"
+            type="password"
         ></v-text-field>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn depressed>Log in to account</v-btn>
+          <v-btn depressed type="submit">Log in to account</v-btn>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
@@ -45,7 +60,30 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.getters.user
+    }
+  },
+  watch: {
+    user (value) {
+      if (value !== null && value !== undefined) {
+        this.$router.push('/') // redirect to main page after user click submit btn
+      }
+    }
+  },
+  methods: {
+    onSignin () {
+      // Vuex
+      this.$store.dispatch('signIn', {email: this.email, password: this.password})
+    }
+  }
 }
 </script>
 

@@ -17,15 +17,16 @@
         <h2>Sign up</h2>
       </v-flex>
     </v-layout>
-    <v-form ref="form">
+    <v-form @submit.prevent="signUp">
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
             placeholder="Email"
-            name="input-2-3"
+            name="email"
             single-line
             full-width
             hide-details
+            v-model="email"
         ></v-text-field>
         </v-flex>
       </v-layout>
@@ -33,16 +34,29 @@
         <v-flex xs12>
           <v-text-field
             placeholder="Password"
-            name="input-2-3"
+            name="password"
             single-line
             full-width
             hide-details
+            v-model="password"
         ></v-text-field>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn depressed>Create account</v-btn>
+          <v-text-field
+            placeholder="RePassword"
+            name="password2"
+            single-line
+            full-width
+            hide-details
+            v-model="password2"
+        ></v-text-field>
+        </v-flex>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-btn depressed type="submit">Create account</v-btn>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
@@ -55,8 +69,21 @@
 </template>
 
 <script>
-export default {
+// import { mapActions } from 'vuex'
 
+export default {
+  data () {
+    return {
+      email: '',
+      password: '',
+      password2: null
+    }
+  },
+  methods: {
+    signUp () {
+      this.$store.dispatch('signUp', {email: this.email, password: this.password, password2: this.password2})
+    }
+  }
 }
 </script>
 
